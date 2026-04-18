@@ -14,7 +14,7 @@
 
   <style>
   /* Mobile Responsive */
-	  * {
+    * {
 	  box-sizing: border-box;
 	}
 
@@ -172,27 +172,69 @@
 	
 	/* banner */
 	.hero-banner {
-	  background: url('banner.jpeg') no-repeat center center;
-	  background-size: cover; /* switch back to cover */
-	  
-	  height: 45vh; /* responsive height */
-	  min-height: 250px;
-	  max-height: 250px;
-
-	  width: 100%;
 	  position: relative;
-
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
+	  width: 100%;
+	  overflow: hidden;
 	}
-	.hero-banner .overlay {
-	  background: rgba(255, 111, 97, 0.85); /* colorful instead of dark */
-	  padding: 15px 25px;
-	  border-radius: 20px;
-	  text-align: center;
+
+	/* IMAGE */
+	.banner-img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	}
+
+	/* OVERLAY CONTAINER */
+	@media (max-width: 768px) {
+
+	  .banner-overlay {
+		position: static;
+		transform: none;
+		text-align: center;
+		padding: 15px;
+		background: linear-gradient(
+		  to top,
+		  rgba(0,0,0,0.6),
+		  rgba(0,0,0,0)
+		);
+	  }
+
+	  .banner-overlay h1 {
+		font-size: 1.5rem;
+	  }
+
+	  .banner-overlay p {
+		font-size: 0.9rem;
+	  }
+
+	}
+
+	/* BUTTON */
+	.banner-btn {
+	  display: inline-block;
+	  background: #ff6f61;
+	  padding: 10px 20px;
+	  border-radius: 25px;
 	  color: white;
-	  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+	  text-decoration: none;
+	  font-weight: bold;
+	  transition: 0.3s;
+	}
+
+	.banner-btn:hover {
+	  transform: scale(1.1);
+	}
+
+	/* ANIMATION */
+	@keyframes fadeInUp {
+	  from {
+		opacity: 0;
+		transform: translateY(20px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(-50%);
+	  }
 	}
 	
 	/*header */
@@ -407,7 +449,8 @@ function manualScroll(direction) {
 
 <!-- HERO -->
 <header class="hero-banner">
-<!--  <div class="overlay">
+<img src="banner.jpeg" alt="Aura Rhymes" class="banner-img">
+<!--  <div class="banner-overlay">
     <h1>Aura Rhymes 🎵</h1>
     <p>Fun, Safe & Educational Rhymes for Kids</p>
     <a href="#videos" class="btn">Watch Videos ▶</a>
@@ -418,7 +461,7 @@ function manualScroll(direction) {
 <section>
   <div class="about-header">
     <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>About</h2>
+    <h2>About Aura Rhymes</h2>
   </div>
 
 <div class="about-content">
@@ -432,11 +475,6 @@ function manualScroll(direction) {
   <h3>🌼 What kids will enjoy:</h3>
 
   <div class="features">
-    <div class="feature">🔷 Shapes</div>
-	<div class="feature">🎨 Colours</div>
-	<div class="feature">🔢 Basic Math</div>
-	<div class="feature">🗣️ Pronunciation</div>
-	<div class="feature">🌱 Life lessons</div>
     <div class="feature">🎵 Kids rhymes</div>
     <div class="feature">📖 Short stories</div>
     <div class="feature">😄 Fun stories</div>
@@ -444,6 +482,11 @@ function manualScroll(direction) {
     <div class="feature">🌿 Nature lessons</div>
     <div class="feature">🧠 Daily learning</div>
     <div class="feature">💚 Positive content</div>
+	<div class="feature">🔢 Math</div>
+	<div class="feature">🎨 Colours</div>
+	<div class="feature">🔷 Shapes</div>
+	<div class="feature">🗣️ Pronunciation</div>
+	<div class="feature">🌱 Life lessons</div>
   </div>
 </div>
 </section>
