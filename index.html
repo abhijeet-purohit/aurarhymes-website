@@ -12,436 +12,9 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-  /* Mobile Responsive */
-    * {
-	  box-sizing: border-box;
-	}
-
-	body {
-	  margin: 0;
-	  padding: 0;
-	}
-
-	img, iframe {
-	  max-width: 100%;
-	  height: auto;
-	}
-	
-	@media (max-width: 768px) {
-
-	  section {
-		padding: 30px 15px;
-	  }
-
-	  h2 {
-		font-size: 1.5rem;
-	  }
-
-	  .about-header {
-		flex-direction: column;
-		gap: 8px;
-	  }
-
-	  .about-avatar {
-		width: 60px;
-		height: 60px;
-	  }
-
-	  .features {
-		grid-template-columns: 1fr; /* single column */
-	  }
-
-	  /* VIDEOS: show 1 at a time */
-	  .scroll-container iframe {
-		flex: 0 0 85%;
-		height: 180px;
-	  }
-
-	  /* TEXT */
-	  .about-content {
-		text-align: left;
-		font-size: 0.95rem;
-	  }
-
-	}
-	
-  /* Mobile Responsive */	
-	
-    body {
-      margin: 0;
-      font-family: 'Baloo 2', cursive;
-      background: #fefefe;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      text-align: center;
-      padding: 60px 20px;
-      color: white;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #ff6f61;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    h2 {
-      color: #ff6f61;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      border-radius: 15px;
-      border: none;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      iframe {
-        height: 250px;
-      }
-    }
-	
-	.social-icons {
-	  margin: 15px 0;
-	}
-
-	.social-icons a {
-	  margin: 0 10px;
-	  display: inline-block;
-	}
-
-	.social-icons img {
-	  width: 40px;
-	  height: 40px;
-	  transition: transform 0.3s ease;
-	}
-
-	.social-icons img:hover {
-	  transform: scale(1.2);
-	}
-	
-	/* banner */
-	.hero-banner {
-	  background: none; /* REMOVE PINK */
-	  padding: 0;       /* REMOVE SPACE */
-	}
-
-	/* IMAGE */
-	.banner-img {
-	  border-radius: 0;
-	}
-
-	/* OVERLAY CONTAINER */
-	@media (max-width: 768px) {
-
-	  .banner-overlay {
-		position: static;
-		transform: none;
-		text-align: center;
-		padding: 15px;
-		background: linear-gradient(
-		  to top,
-		  rgba(0,0,0,0.6),
-		  rgba(0,0,0,0)
-		);
-	  }
-
-	  .banner-overlay h1 {
-		font-size: 1.5rem;
-	  }
-
-	  .banner-overlay p {
-		font-size: 0.9rem;
-	  }
-
-	}
-
-	/* BUTTON */
-	.banner-btn {
-	  display: inline-block;
-	  background: #ff6f61;
-	  padding: 10px 20px;
-	  border-radius: 25px;
-	  color: white;
-	  text-decoration: none;
-	  font-weight: bold;
-	  transition: 0.3s;
-	}
-
-	.banner-btn:hover {
-	  transform: scale(1.1);
-	}
-
-	/* ANIMATION */
-	@keyframes fadeInUp {
-	  from {
-		opacity: 0;
-		transform: translateY(20px);
-	  }
-	  to {
-		opacity: 1;
-		transform: translateY(-50%);
-	  }
-	}
-	
-	/*header */
-	.about-header {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  gap: 12px;
-	}
-
-	/* aura avatar within the circle */ 
-	.about-avatar {
-	  width: 50px;
-	  height: 50px;
-	  border-radius: 50%;
-	  object-fit: cover;
-	  background: transparent;
-	  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-	}
-
-    /* about aura rhymes */	
-	.about-content {
-	  max-width: 750px;
-	  margin: 20px auto;
-	  text-align: center;
-	  line-height: 1.8;
-	}
-
-	.welcome {
-	  font-size: 1.3rem;
-	  color: #333;
-	}
-
-	.desc {
-	  color: #555;
-	  margin-bottom: 12px;
-	}
-
-	/* GRID FEATURES INSTEAD OF UGLY BULLETS */
-	.features {
-	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	  gap: 12px;
-	  margin: 20px 0;
-	}
-
-	.feature {
-	  background: #fff5f3;
-	  padding: 10px;
-	  border-radius: 12px;
-	  font-size: 0.95rem;
-	}
-
-	/* HIGHLIGHT LINES */
-	.highlight {
-	  margin: 8px 0;
-	  font-weight: 500;
-	}
-
-	/* SUBSCRIBE CTA */
-	.subscribe {
-	  margin-top: 20px;
-	  font-weight: bold;
-	  color: #ff6f61;
-	}	
-	
-	
-	/* Video iFrame */
-	.video-wrapper {
-	  position: relative;
-	  display: flex;
-	  align-items: center;
-	}
-
-	.video-slider {
-	  display: flex;
-	  overflow-x: auto;
-	  gap: 16px;
-	  padding: 10px;
-
-	  scroll-behavior: smooth;
-
-	  -ms-overflow-style: none;
-	  scrollbar-width: none;
-	}
-	.video-slider::-webkit-scrollbar {
-	  display: none;
-	}
-
-	.video-card {
-	  flex: 0 0 220px;
-	  border-radius: 16px;
-	  overflow: hidden;
-	  transition: transform 0.3s ease;
-	}
-
-	.video-card img {
-	  width: 100%;
-	  display: block;
-	}
-
-	/* HOVER EFFECT */
-	.video-card:hover {
-	  transform: scale(1.08);
-	}
-	/* Buttons */
-	
-	.scroll-btn {
-	  background: #ff6f61;
-	  border: none;
-	  color: white;
-	  font-size: 22px;
-	  padding: 10px 15px;
-	  cursor: pointer;
-	  border-radius: 50%;
-	  position: absolute;
-	  z-index: 2;
-	}
-
-	.scroll-btn.left {
-	  left: 0;
-	}
-
-	.scroll-btn.right {
-	  right: 0;
-	}
-
-	
-	/* Video iFrame */ 
-	
-	/* Hide horizontal scroll bar */
-	
-	.video-slider {
-	  scroll-snap-type: x mandatory;
-	}
-
-	.video-card {
-	  scroll-snap-align: start;
-	}
-	
-	.video-slider {
-	  display: flex;
-	  overflow-x: auto;
-	  gap: 15px;
-	  scroll-behavior: smooth;
-	  padding: 10px;
-
-
-	  -ms-overflow-style: none;  /* IE & Edge */
-	  scrollbar-width: none;     /* Firefox */
-	}
-
-	.video-slider::-webkit-scrollbar {
-	  display: none; /* Chrome, Safari */
-	}
-	
-	
-	/* Hide horizontal scroll bar */	
-	
-  </style>
+  <link rel="stylesheet" href="aura-style.css">
+ 
 </head>
-<script>
-function scrollVideos(direction) {
-  const container = document.getElementById("videoSlider");
-  const scrollAmount = 250;
-  container.scrollBy({
-    left: direction * scrollAmount,
-    behavior: "smooth"
-  });
-}
-
-
-<script>
-const slider = document.getElementById("videoSlider");
-
-let autoScroll;
-const speed = 1; // lower = slower
-
-function startAutoScroll() {
-  autoScroll = setInterval(() => {
-    slider.scrollLeft += speed;
-
-    // seamless loop
-    if (slider.scrollLeft >= slider.scrollWidth / 2) {
-      slider.scrollLeft = 0;
-    }
-  }, 20);
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScroll);
-}
-
-/* START AUTO */
-startAutoScroll();
-
-/* PAUSE ON HOVER */
-slider.addEventListener("mouseenter", stopAutoScroll);
-slider.addEventListener("mouseleave", startAutoScroll);
-
-/* BUTTON CONTROL */
-function manualScroll(direction) {
-  slider.scrollBy({
-    left: direction * 250,
-    behavior: "smooth"
-  });
-}
-</script>
-
-</script>
 <body>
 
 <!-- HERO -->
@@ -458,32 +31,38 @@ function manualScroll(direction) {
 <section>
   <div class="about-header">
     <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>About Aura Rhymes</h2>
+    <h2>About</h2>
   </div>
 
 <div class="about-content">
 
   <p class="desc">
     This is a fun and colorful kids channel where little explorers learn rhymes in a joyful and easy way. 🌱🐮🐔
-    Through cute characters, bright animations, and happy music, we show rhymes. 
-    Our videos are designed especially for young kids, making learning safe, simple, and fun.
+    Through cute characters, bright animations, and happy music, we show an animated world to kids that will help kids build their imagination. 
+    Our videos are designed especially for kids in the age group of 1-8 years, making learning safe, simple, and fun.
   </p>
+</section>
 
-  <h3>🌼 What kids will enjoy:</h3>
+<!-- What Kids will Enjoy -->
+<section>
+  <div class="about-header">
+    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <h2>🌼 What kids will enjoy:</h2>
+  </div>
 
   <div class="features">
+    <div class="feature">🔢 Math</div>
+    <div class="feature">🔷 Shapes</div>
+    <div class="feature">🎨 Colours</div>
+    <div class="feature">🌱 Languages</div>
     <div class="feature">🎵 Kids rhymes</div>
-    <div class="feature">📖 Short stories</div>
     <div class="feature">😄 Fun stories</div>
     <div class="feature">🐶 Cute animals</div>
+    <div class="feature">🗣️ Pronunciation</div>
+    <div class="feature">📖 Short stories</div>
     <div class="feature">🌿 Nature lessons</div>
     <div class="feature">🧠 Daily learning</div>
     <div class="feature">💚 Positive content</div>
-	<div class="feature">🔢 Math</div>
-	<div class="feature">🎨 Colours</div>
-	<div class="feature">🔷 Shapes</div>
-	<div class="feature">🗣️ Pronunciation</div>
-	<div class="feature">🌱 Life lessons</div>
   </div>
 </div>
 </section>
@@ -511,12 +90,13 @@ function manualScroll(direction) {
   </div>
   
   <p>
-    We are a creative family focused on building high-quality, safe, and meaningful content for children. 
-	Our family comprises kids, youths, and parents who help us understand a kid's needs in a more better way.
+
+    We are a creative <del>team</del> <ins>family</ins> focused on building high-quality, safe, and meaningful content for children. 
+	  Our family comprises kids, youths, mothers, and parents who help us understand kid's needs. Based on this analysis we design our videos.
     Our mission is to combine fun with early learning.
   </p>
   <p>
-    Aura Rhymes is owned by AS Entertainment. Aura specializes in 3D animated videos, kids rhymes, learning videos, and short stories. 
+    Aura Rhymes is owned by AS Entertainment. AS Entertainment specializes in 3D animated videos, kids rhymes, learning videos, and short stories. 
   </p>
 </section>
 
@@ -536,29 +116,6 @@ function manualScroll(direction) {
 </section>
 
 <!-- VIDEOS -->
-
-<!--
-<section id="videos">
-  <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>Watch Our Videos</h2>
-  </div>
-  
-
-  <!-- Replace YOUR_PLAYLIST_ID -->
-  
-  <!--
-  <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID"></iframe>
-
-  <br><br>
-  -->
-  <!--
-  <div>
-  <p class="subscribe">
-    Subscribe to Aura Rhymes for a new video every day and grow happy minds—one seed at a time! 🌱✨
-  </p>
-  </div>   -->
-  
 <section id="videos">
   <h2>🎬 Watch Our Videos</h2>
 
@@ -659,7 +216,6 @@ function manualScroll(direction) {
   <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
   </div>
 
-  
   
   <a href="https://www.youtube.com/@aura-rhymes" target="_blank" class="btn">
     Subscribe on YouTube ❤️
