@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/aura1.jpeg">
   <title>Aura Rhymes | Safe Kids Rhymes</title>
 
   <!-- SEO -->
@@ -15,11 +16,29 @@
   <link rel="stylesheet" href="aura-style.css">
  
 </head>
+<script src="script.js" defer></script>
 <body>
 
 <!-- HERO -->
 <header class="hero-banner">
-<img src="banner.jpeg" alt="Aura Rhymes" class="banner-img">
+  <div class="main-header">
+    <div class="logo-section">
+      <img src="images/aura1.jpeg" alt="Aura" class="logo-img">
+      <h1 class="logo-text">Aura Rhymes</h1>
+    </div>
+
+    <nav class="nav-links">
+<!--      <a href="#home">Home</a>  -->
+      <a href="#popular">Popular</a>
+      <a href="#latest">Latest</a>
+      <a href="#about">Our Story</a>      
+      <a href="#language">Languages</a>   
+    </nav>
+  </div>
+
+  <img src="images/banner.jpeg" alt="Aura Rhymes" class="banner-img">
+
+
 <!--  <div class="banner-overlay">
     <h1>Aura Rhymes 🎵</h1>
     <p>Fun, Safe & Educational Rhymes for Kids</p>
@@ -27,42 +46,49 @@
   </div> -->
 </header>
 
+
 <!-- ABOUT -->
 <section>
   <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>About</h2>
+    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <h2>About Aura Rhymes</h2>
   </div>
 
 <div class="about-content">
 
   <p class="desc">
-    This is a fun and colorful kids channel where little explorers learn rhymes in a joyful and easy way. 🌱🐮🐔
-    Through cute characters, bright animations, and happy music, we show an animated world to kids that will help kids build their imagination. 
-    Our videos are designed especially for kids in the age group of 1-8 years, making learning safe, simple, and fun.
+    Aura Rhymes is a fun and colorful kids channel where little explorers learn Rhymes, Shapes, Colours, and much more in a joyful and easy way. 
+    🌱🐮🐔 
+    With cute characters Aura Rhymes turn everyday learning into a delightful experience. 
+  </p>
+  <br/>
+
+  <p class="desc">
+    Each video helps children build curiosity, confidence, and imagination while enjoying engaging rhymes and stories. We create child-friendly, positive, and educational content that parents can trust. Every video is made with care to ensure a safe and enriching 
+    experience for young minds.
+  </p>
+  <br/> 
+  <p class="desc">  
+    At Aura Rhymes the videos are made through colorful animations and plesant music. Designed for toddlers and preschoolers, our 
+    videos make learning simple, engaging, and full of smiles.
   </p>
 </section>
 
 <!-- What Kids will Enjoy -->
 <section>
   <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>🌼 What kids will enjoy:</h2>
+    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <h2>What Kids Will Learn?</h2>
   </div>
 
   <div class="features">
-    <div class="feature">🔢 Math</div>
-    <div class="feature">🔷 Shapes</div>
-    <div class="feature">🎨 Colours</div>
-    <div class="feature">🌱 Languages</div>
-    <div class="feature">🎵 Kids rhymes</div>
-    <div class="feature">😄 Fun stories</div>
-    <div class="feature">🐶 Cute animals</div>
-    <div class="feature">🗣️ Pronunciation</div>
-    <div class="feature">📖 Short stories</div>
-    <div class="feature">🌿 Nature lessons</div>
-    <div class="feature">🧠 Daily learning</div>
-    <div class="feature">💚 Positive content</div>
+    <div class="feature">🎨 Art & Creativity 💚</div>    
+    <div class="feature">🎨 Colours & Shapes 🔷</div>
+    <div class="feature">🎵 Rhymes & Stories 📖</div>
+    <div class="feature">🌿 Nature & Animals 🐶</div>
+    <div class="feature">🌱 Languages & Pronunciation 🗣️</div>
+    <div class="feature">🔢 Basic Math & Life Lessons 🧠</div>    
+    
   </div>
 </div>
 </section>
@@ -70,54 +96,219 @@
 <!-- WHO IS IT FOR -->
 <section>
   <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Who Is It For?</h2>
   </div>
   
   <div class="cards">
     <div class="card">👶 Toddlers (1–3 years)</div>
-    <div class="card">🧒 Preschool Kids (3–6 years)</div>
+    <div class="card">🧒 Kids (3–8 years)</div>
     <div class="card">👨‍👩‍👧 Parents</div>
     <div class="card">🏫 Teachers</div>
   </div>
 </section>
 
+
+<!-- POPULAR VIDEOS -->
+<section id="popular">
+  <h2>🔥 Popular Videos</h2>
+
+  <div class="video-wrapper">
+
+  <div class="video-slider" id="videoSlider">
+    <!-- <button class="scroll-btn left" onclick="manualScroll(-1)">❮</button> -->
+
+      <!-- VIDEO CARD -->
+      <a href="https://www.youtube.com/embed/oRWAEaua3ww" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/oRWAEaua3ww/hqdefault.jpg">
+        </div>
+      </a>
+	  
+      <a href="https://www.youtube.com/embed/6JWERjXKlqM" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/6JWERjXKlqM/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/lnWYw42ApXA" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/lnWYw42ApXA/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/eK1Q_dFHrUk" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/eK1Q_dFHrUk/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/42TrxSb_xWk" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/42TrxSb_xWk/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/6yFXYboHvYc" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/6yFXYboHvYc/hqdefault.jpg">
+        </div>
+      </a>
+      <a href="https://www.youtube.com/embed/g_3EYC3IEw4" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/g_3EYC3IEw4/hqdefault.jpg">
+        </div>
+      </a>
+	  
+      <a href="https://www.youtube.com/embed/fcKFk22Up3E" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/fcKFk22Up3E/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/VuPyx4vy4_Q" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/VuPyx4vy4_Q/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/Wo-8_SB1AGk" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/Wo-8_SB1AGk/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/lZ4clrWOPWs" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/lZ4clrWOPWs/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/jPjdPZErf64" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/jPjdPZErf64/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/kEBD4CeO1Ao" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/kEBD4CeO1Ao/hqdefault.jpg">
+        </div>
+      </a>
+
+      <!-- COPY ABOVE BLOCK FOR MORE VIDEOS -->
+
+    </div>
+
+  <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
+  </div>
+</section>
+
+
+<!-- LATEST VIDEOS -->
+<section id="latest">
+  <h2>🆕 Latest Videos</h2>
+
+  <div class="video-wrapper">
+
+  <div class="video-slider" id="videoSlider">
+    <!-- <button class="scroll-btn left" onclick="manualScroll(-1)">❮</button> -->
+
+      <!-- VIDEO CARD -->
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh1tICxH5f7czrBO6jbyBjm" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/Cf0rduMe8So/hqdefault.jpg">
+        </div>
+      </a>
+	  
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkgdZeEkNNs3qtslN2oWs-a7" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/lZ4clrWOPWs/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkj4eGTcDuFJVFQ1ugVL3SLm" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/Qv0xkwT5edU/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiRjZ3BizIUJ6anyRPU7tv3" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/VuPyx4vy4_Q/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh8lvb4DA2sbLIOu__6XhTF" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/zruBg6_cu4M/hqdefault.jpg">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkjpt89fCbwDimeYySj111B3" target="_blank" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/K_Yvk2q_2pw/hqdefault.jpg">
+        </div>
+      </a>
+
+      <!-- COPY ABOVE BLOCK FOR MORE VIDEOS -->
+
+    </div>
+
+  <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
+  </div>
+</section>
+
+
 <!-- WHO ARE WE -->
-<section>
+<section id="about">
   <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>Who Are We?</h2>
+    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <h2>Our Story</h2>
   </div>
   
-  <p>
+  <p class="desc">
 
-    We are a creative <del>team</del> <ins>family</ins> focused on building high-quality, safe, and meaningful content for children. 
-	  Our family comprises kids, youths, mothers, and parents who help us understand kid's needs. Based on this analysis we design our videos.
-    Our mission is to combine fun with early learning.
+    We are a creative, family-driven team dedicated to building high-quality, safe, and meaningful content for children. Our team 
+    includes kids, young creators, mothers, and parents, allowing us to truly understand the needs, interests, and learning 
+    patterns of young minds. 
   </p>
-  <p>
-    Aura Rhymes is owned by AS Entertainment. AS Entertainment specializes in 3D animated videos, kids rhymes, learning videos, and short stories. 
+  <br/>
+  <p class="desc">
+    Based on these insights, we thoughtfully design our videos to make learning engaging, simple, and 
+    enjoyable. Our mission is to combine fun with early learning in a way that nurtures curiosity and confidence in children.
+  </p>
+  <br/>
+  <p class="desc">
+    At Aura Rhymes, we believe that children learn best through play, music, and imagination. That’s why our content focuses on 
+    creating a joyful environment where kids can explore, discover, and grow at their own pace. Every video is crafted with care 
+    to ensure it is age-appropriate, positive, and enriching.
+  </p>
+  <br/>
+  <p class="desc">
+    Aura Rhymes is owned by <b>AS Entertainment</b>, a creative studio with a passion for storytelling and animation, AS Entertainment aims 
+    to create visually engaging and meaningful content that supports early childhood development.
   </p>
 </section>
 
 <!-- WHAT WE DO -->
 <section>
   <div class="about-header">
-    <img src="aura1.jpeg" alt="Aura Character" class="about-avatar">
+    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>What Do We Do?</h2>
   </div>
 
   <div class="cards">
-    <div class="card">🎵 Kids Rhymes</div>
-    <div class="card">🎬 Animated Videos</div>
-    <div class="card">🌍 Language Learning</div>
-    <div class="card">✨ Fun + Education</div>
+    <div class="card">🎵 Rhymes</div>
+    <div class="card">🎬 Stories</div>
+    <div class="card">🚀 3D Animation</div>
+    <div class="card">✨ Songs</div>
   </div>
 </section>
 
 <!-- VIDEOS -->
-<section id="videos">
-  <h2>🎬 Watch Our Videos</h2>
+<section id="language">
+  <h2>🎬 Other Language Videos</h2>
 
   <div class="video-wrapper">
 
@@ -222,12 +413,10 @@
   </a>
 </section>
 
-
-
 <!-- SAFETY -->
 <section>
   <h2>Safety & Privacy</h2>
-  <p>
+  <p class="desc">
     Aura Rhymes is committed to providing a safe and child-friendly experience.
     We do not collect personal data from children and ensure all content is age-appropriate.
   </p>
@@ -260,6 +449,6 @@
   </div>
   <p>© 2026 Aura Rhymes. All Rights Reserved.</p>
 </footer>
-
+<button id="backToTopBtn">↑</button>
 </body>
 </html>
