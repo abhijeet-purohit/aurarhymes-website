@@ -72,3 +72,14 @@ function manualScroll(direction) {
     behavior: "smooth"
   });
 }
+
+/* BANNER */
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".main-header");
+
+  if (window.scrollY > 50) {
+    header.style.background = "#ffffff";
+  } else {
+    header.style.background = "rgba(255,255,255,0.9)";
+  }
+});

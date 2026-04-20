@@ -1,0 +1,33 @@
+@media (max-width: 768px) {
+
+  .hero-banner {
+    height: 55vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .main-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-bg {
+    background-position: 75% center;
+  }
+}

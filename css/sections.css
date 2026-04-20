@@ -1,0 +1,68 @@
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.about-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.desc {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.video-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.video-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  flex: 0 0 220px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fff5f3, #ffe9e5);
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(45deg, #ff6f61, #ff9a9e);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+}
