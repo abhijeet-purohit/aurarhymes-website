@@ -3,7 +3,7 @@ html {
 }
 
 section {
-  scroll-margin-top: 50px; /* adjust based on header height */
+  scroll-margin-top: 80px; /* adjust based on header height */
 }
 
 .about-header {
