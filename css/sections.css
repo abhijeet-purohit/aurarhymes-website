@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 50px; /* adjust based on header height */
+}
+
 .about-header {
   display: flex;
   align-items: center;
