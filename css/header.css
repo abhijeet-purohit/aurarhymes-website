@@ -47,3 +47,49 @@
 .nav-links a:hover {
   color: #ff6f61;
 }
+
+
+/* LAB DROPDOWN */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropbtn {
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.nav-dropdown:hover .nav-dropdown-content {
+  display: block;
+}
+
+/* Dropdown item */
+.nav-dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.nav-dropdown-content a:hover {
+  background: #f2f2f2;
+}
