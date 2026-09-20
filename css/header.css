@@ -49,3 +49,94 @@
 }
 
 
+/* =========================================================
+   AURA RHYMES — MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: grid;
+
+    /*
+     * Two columns for the normal navigation.
+     * This prevents Lab and Apps from taking
+     * an unnecessarily large full-width row.
+     */
+    grid-template-columns: auto auto;
+
+    justify-content: center;
+
+    align-items: center;
+
+    column-gap: 42px;
+
+    row-gap: 20px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 20px 18px;
+  }
+
+
+  /* Normal navigation links */
+
+  .nav-links > a {
+    width: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    white-space: nowrap;
+  }
+
+
+  /*
+   * Lab and Apps should behave like normal
+   * navigation items — NOT occupy an entire row.
+   */
+
+  .nav-links > .lab-menu,
+  .nav-links > .apps-menu {
+
+    width: auto;
+
+    display: block;
+
+    position: relative;
+  }
+
+
+  .nav-links > .lab-menu > summary,
+  .nav-links > .apps-menu > summary {
+
+    width: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    white-space: nowrap;
+  }
+
+
+  /*
+   * Dropdown panels themselves can still
+   * become full-width inside the mobile
+   * navigation when opened.
+   */
+
+  .lab-menu-panel,
+  .apps-menu-panel {
+
+    width: min(190px, calc(100vw - 40px));
+  }
+
+}
