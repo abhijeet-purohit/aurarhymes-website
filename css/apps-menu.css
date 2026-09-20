@@ -1,0 +1,202 @@
+/* =========================================================
+   AURA RHYMES — APPS MENU
+   ========================================================= */
+
+.apps-menu {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY
+   --------------------------------------------------------- */
+
+.apps-menu > summary {
+
+  list-style: none;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  user-select: none;
+}
+
+.apps-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.apps-menu > summary::marker {
+  display: none;
+}
+
+
+/* ---------------------------------------------------------
+   ARROW
+   --------------------------------------------------------- */
+
+.apps-menu-arrow {
+
+  display: inline-block;
+
+  font-size: 0.75em;
+
+  transition: transform 0.2s ease;
+}
+
+.apps-menu[open] > summary .apps-menu-arrow {
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   APPS PANEL
+   ========================================================= */
+
+.apps-menu-panel {
+
+  position: absolute;
+
+  top: calc(100% + 10px);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 238px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   APP LINKS
+   ========================================================= */
+
+.apps-menu-panel > a {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  color: #333333;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.apps-menu-panel > a:hover {
+
+  background: #fff4c7;
+
+  color: #ff6b61;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .apps-menu {
+
+    width: 100%;
+  }
+
+  .apps-menu > summary {
+
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .apps-menu-panel {
+
+    position: static;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-top: 6px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    padding: 7px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: none;
+  }
+
+  .apps-menu-panel > a {
+
+    padding: 11px 14px;
+
+    border-radius: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .apps-menu-panel {
+
+    padding: 6px;
+  }
+
+  .apps-menu-panel > a {
+
+    font-size: 14px;
+
+    padding: 10px 12px;
+  }
+
+}

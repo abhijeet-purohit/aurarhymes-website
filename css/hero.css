@@ -51,3 +51,7 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.hero-header{
+  color: white;
+}
