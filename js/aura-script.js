@@ -80,18 +80,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  let autoScroll;
+  let autoScroll = null;
 
   const speed = 1; // lower = slower
 
 
-  /* Start auto scroll */
+  /* ---------------------------------------------------------
+     START AUTO SCROLL
+     --------------------------------------------------------- */
+
   function startAutoScroll() {
 
     /*
      * Prevent multiple intervals from being created.
      */
-    if (autoScroll) {
+    if (autoScroll !== null) {
       return;
     }
 
@@ -103,7 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
       /*
        * Seamless loop
        */
-      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+      if (
+        slider.scrollWidth > slider.clientWidth &&
+        slider.scrollLeft >= slider.scrollWidth / 2
+      ) {
 
         slider.scrollLeft = 0;
 
@@ -114,12 +120,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* Stop auto scroll */
+  /* ---------------------------------------------------------
+     STOP AUTO SCROLL
+     --------------------------------------------------------- */
+
   function stopAutoScroll() {
 
-    clearInterval(autoScroll);
+    if (autoScroll !== null) {
 
-    autoScroll = null;
+      clearInterval(autoScroll);
+
+      autoScroll = null;
+
+    }
 
   }
 
@@ -128,7 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoScroll();
 
 
-  /* Pause when mouse enters */
+  /* ---------------------------------------------------------
+     PAUSE ON MOUSE HOVER
+     --------------------------------------------------------- */
+
   slider.addEventListener("mouseenter", function () {
 
     stopAutoScroll();
@@ -136,7 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  /* Resume when mouse leaves */
+  /* Resume after mouse leaves */
+
   slider.addEventListener("mouseleave", function () {
 
     startAutoScroll();
@@ -144,25 +161,47 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  /* ---------------------------------------------------------
+     PAUSE ON MOBILE TOUCH
+     --------------------------------------------------------- */
+
+  slider.addEventListener(
+    "touchstart",
+    function () {
+
+      stopAutoScroll();
+
+    },
+    { passive: true }
+  );
+
+
+  /* Resume after touch */
+
+  slider.addEventListener(
+    "touchend",
+    function () {
+
+      startAutoScroll();
+
+    },
+    { passive: true }
+  );
+
+
   /*
-   * Pause while touching / dragging on mobile
+   * Also resume if the touch is cancelled.
    */
-  slider.addEventListener("touchstart", function () {
 
-    stopAutoScroll();
+  slider.addEventListener(
+    "touchcancel",
+    function () {
 
-  }, { passive: true });
+      startAutoScroll();
 
-
-  /*
-   * Resume after touch
-   */
-  slider.addEventListener("touchend", function () {
-
-    startAutoScroll();
-
-  }, { passive: true });
-
+    },
+    { passive: true }
+  );
 
 });
 
@@ -213,31 +252,43 @@ window.addEventListener("scroll", function () {
 
 
 /* =========================================================
-   AURA RHYMES
-   NAVIGATION DROPDOWN CONTROL
+   AURA RHYMES — NAVIGATION DROPDOWN CONTROL
    =========================================================
-   
-   Controls:
-   
-   LAB
+
+   TOP-LEVEL NAVIGATION
+
+   Videos
+   Songs
+
+   Lab
       └── Space
            ├── Solar System
            ├── Earth
            ├── Space Missions
            ├── Planets
            └── Asteroids
+      └── ABC Explorer
 
-   APPS
+   Apps
       ├── Games
       └── Mobile Apps
 
-   Rules:
-   • Only one top-level dropdown open at a time
+   We
+   Store
+
+
+   BEHAVIOR
+
+   • Only one top-level dropdown can be open
    • Lab and Apps cannot overlap
-   • Clicking another navigation item closes dropdowns
+   • Clicking Apps closes Lab
+   • Clicking Lab closes Apps
+   • Clicking another navigation link closes dropdowns
    • Clicking outside navigation closes dropdowns
-   • Space can remain open inside Lab
-   • Mobile and desktop use the same behavior
+   • Clicking/tapping works on desktop and mobile
+   • Space remains inside Lab
+   • Escape closes all dropdowns
+
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -249,11 +300,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /*
-   * -------------------------------------------------------
-   * CLOSE ALL DROPDOWNS
-   * -------------------------------------------------------
-   */
+  /* =======================================================
+     CLOSE ALL DROPDOWNS
+     ======================================================= */
 
   function closeAllDropdowns() {
 
@@ -266,28 +315,32 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /*
-   * -------------------------------------------------------
-   * CLOSE OTHER TOP-LEVEL DROPDOWNS
-   * -------------------------------------------------------
-   */
+  /* =======================================================
+     CLOSE OTHER TOP-LEVEL DROPDOWNS
+     ======================================================= */
 
   function closeOtherTopLevelMenus(currentMenu) {
 
-    nav.querySelectorAll(":scope > details").forEach(function (menu) {
+    nav.querySelectorAll(
+      ":scope > .lab-menu, :scope > .apps-menu"
+    ).forEach(function (menu) {
 
       if (menu !== currentMenu) {
 
         menu.removeAttribute("open");
 
         /*
-         * Also close any nested submenu.
+         * Close any nested submenu inside the
+         * other top-level menu.
          */
-        menu.querySelectorAll("details").forEach(function (submenu) {
 
-          submenu.removeAttribute("open");
+        menu.querySelectorAll("details").forEach(
+          function (submenu) {
 
-        });
+            submenu.removeAttribute("open");
+
+          }
+        );
 
       }
 
@@ -296,187 +349,103 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /*
-   * -------------------------------------------------------
-   * CLICK HANDLER
-   * -------------------------------------------------------
-   */
+  /* =======================================================
+     TOP-LEVEL DETAILS TOGGLE
+     =======================================================
+
+     The native <details> element controls whether
+     the menu is actually open.
+
+     The "toggle" event is therefore used to coordinate
+     Lab and Apps reliably on desktop and mobile.
+     ======================================================= */
+
+  nav.querySelectorAll(
+    ":scope > .lab-menu, :scope > .apps-menu"
+  ).forEach(function (menu) {
+
+    menu.addEventListener("toggle", function () {
+
+      if (menu.open) {
+
+        closeOtherTopLevelMenus(menu);
+
+      }
+
+    });
+
+  });
+
+
+  /* =======================================================
+     NAVIGATION LINK CLICK
+     ======================================================= */
 
   nav.addEventListener("click", function (event) {
 
-    const clickedSummary = event.target.closest("summary");
+    const link = event.target.closest("a");
 
-    const clickedLink = event.target.closest("a");
-
-
-    /* =====================================================
-       DROPDOWN SUMMARY CLICK
-       ===================================================== */
-
-    if (clickedSummary && nav.contains(clickedSummary)) {
-
-      const clickedMenu = clickedSummary.closest("details");
-
-      if (!clickedMenu) {
-        return;
-      }
-
-
-      /*
-       * Determine whether this is a TOP-LEVEL dropdown.
-       *
-       * Example:
-       *
-       * Lab summary  → top level
-       * Apps summary → top level
-       *
-       * Space summary → nested submenu
-       */
-
-      const topLevelMenu = clickedMenu.closest(
-        ".lab-menu, .apps-menu"
-      );
-
-
-      const isTopLevelSummary =
-        clickedSummary.parentElement === topLevelMenu;
-
-
-      /*
-       * ---------------------------------------------------
-       * TOP-LEVEL MENU
-       * ---------------------------------------------------
-       */
-
-      if (isTopLevelSummary) {
-
-        /*
-         * Close the other top-level dropdown.
-         *
-         * Therefore:
-         *
-         * Lab OPEN
-         *     ↓ click Apps
-         * Apps OPEN
-         * Lab CLOSED
-         */
-
-        closeOtherTopLevelMenus(topLevelMenu);
-
-
-        /*
-         * If Lab is being opened again, reset its
-         * Space submenu so the user always starts
-         * at the first level.
-         */
-
-        if (
-          topLevelMenu.classList.contains("lab-menu")
-        ) {
-
-          topLevelMenu
-            .querySelectorAll(".lab-submenu")
-            .forEach(function (submenu) {
-
-              submenu.removeAttribute("open");
-
-            });
-
-        }
-
-      }
-
-
-      /*
-       * ---------------------------------------------------
-       * NESTED SUBMENU
-       * ---------------------------------------------------
-       *
-       * Space stays inside Lab.
-       */
-
-      else {
-
-        /*
-         * Make sure the parent Lab menu remains open.
-         */
-
-        const parentLab = clickedMenu.closest(".lab-menu");
-
-        if (parentLab) {
-
-          parentLab.setAttribute("open", "");
-
-        }
-
-      }
-
+    if (!link) {
       return;
-
     }
 
 
-    /* =====================================================
-       NORMAL NAVIGATION LINK
-       ===================================================== */
+    /*
+     * Any actual navigation link closes all
+     * open dropdowns.
+     *
+     * Examples:
+     *
+     * Videos
+     * Songs
+     * We
+     * Store
+     * Games
+     * Mobile Apps
+     * ABC Explorer
+     * Solar System
+     * Earth
+     * etc.
+     */
 
-    if (clickedLink && nav.contains(clickedLink)) {
-
-      /*
-       * Clicking:
-       *
-       * Videos
-       * Songs
-       * We
-       * Store
-       * Games
-       * Mobile Apps
-       * ABC Explorer
-       * Solar System
-       * etc.
-       *
-       * closes all open dropdowns.
-       */
-
-      closeAllDropdowns();
-
-      return;
-
-    }
+    closeAllDropdowns();
 
   });
 
 
-  /*
-   * -------------------------------------------------------
-   * CLICK OUTSIDE NAVIGATION
-   * -------------------------------------------------------
-   *
-   * Clicking anywhere outside the navigation closes:
-   *
-   * Lab
-   * Space
-   * Apps
-   */
+  /* =======================================================
+     CLICK / TOUCH OUTSIDE NAVIGATION
+     =======================================================
 
-  document.addEventListener("click", function (event) {
+     pointerdown supports:
 
-    if (!nav.contains(event.target)) {
+     • Mouse
+     • Touch
+     • Stylus
 
-      closeAllDropdowns();
+     Capture mode makes the outside-click behavior
+     reliable even when another element has its
+     own event handlers.
+     ======================================================= */
 
-    }
+  document.addEventListener(
+    "pointerdown",
+    function (event) {
 
-  });
+      if (!nav.contains(event.target)) {
+
+        closeAllDropdowns();
+
+      }
+
+    },
+    true
+  );
 
 
-  /*
-   * -------------------------------------------------------
-   * ESCAPE KEY
-   * -------------------------------------------------------
-   *
-   * Very useful on desktop and accessibility-friendly.
-   */
+  /* =======================================================
+     ESCAPE KEY
+     ======================================================= */
 
   document.addEventListener("keydown", function (event) {
 
@@ -493,15 +462,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* =========================================================
    AURA RHYMES — BASIC CONTENT PROTECTION
+   =========================================================
+
+   NOTE:
+   These are only deterrents.
+   They are NOT real security mechanisms.
+
+   Website source, HTML, CSS and JavaScript can never
+   be completely hidden from a determined visitor.
    ========================================================= */
 
-/*
- * Disable right-click context menu.
- *
- * NOTE:
- * This is only a deterrent.
- * It is NOT a security mechanism.
- */
+
+/* ---------------------------------------------------------
+   DISABLE RIGHT-CLICK CONTEXT MENU
+   --------------------------------------------------------- */
 
 document.addEventListener("contextmenu", function (event) {
 
@@ -510,18 +484,16 @@ document.addEventListener("contextmenu", function (event) {
 });
 
 
-/*
- * ---------------------------------------------------------
- * Disable common developer/source shortcuts.
- * ---------------------------------------------------------
- *
- * This is only a deterrent and is not real security.
- */
+/* ---------------------------------------------------------
+   DISABLE COMMON DEVELOPER / SOURCE SHORTCUTS
+   --------------------------------------------------------- */
 
 document.addEventListener("keydown", function (event) {
 
 
-  /* F12 — Developer Tools */
+  /* -------------------------------------------------------
+     F12 — Developer Tools
+     ------------------------------------------------------- */
 
   if (event.key === "F12") {
 
@@ -532,7 +504,9 @@ document.addEventListener("keydown", function (event) {
   }
 
 
-  /* Ctrl + U — View Source */
+  /* -------------------------------------------------------
+     Ctrl + U — View Source
+     ------------------------------------------------------- */
 
   if (
     event.ctrlKey &&
@@ -546,7 +520,9 @@ document.addEventListener("keydown", function (event) {
   }
 
 
-  /* Ctrl + Shift + I — Developer Tools */
+  /* -------------------------------------------------------
+     Ctrl + Shift + I — Developer Tools
+     ------------------------------------------------------- */
 
   if (
     event.ctrlKey &&
@@ -561,7 +537,9 @@ document.addEventListener("keydown", function (event) {
   }
 
 
-  /* Ctrl + Shift + J — Developer Console */
+  /* -------------------------------------------------------
+     Ctrl + Shift + J — Developer Console
+     ------------------------------------------------------- */
 
   if (
     event.ctrlKey &&
@@ -576,7 +554,9 @@ document.addEventListener("keydown", function (event) {
   }
 
 
-  /* Ctrl + Shift + C — Inspect Element */
+  /* -------------------------------------------------------
+     Ctrl + Shift + C — Inspect Element
+     ------------------------------------------------------- */
 
   if (
     event.ctrlKey &&
