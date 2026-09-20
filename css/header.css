@@ -72,6 +72,7 @@
 @media (max-width: 768px) {
 
   .main-header {
+
     /*
      * Stack logo and navigation vertically.
      * Logo remains centered above the navigation.
@@ -122,15 +123,16 @@
 
     /*
      * IMPORTANT:
-     * Use FLEX, NOT GRID.
+     * Keep navigation in ONE horizontal row.
      *
-     * This keeps all navigation items on one row.
+     * !important is intentional here because
+     * responsive.css loads after header.css.
      */
     display: flex;
 
     flex-direction: row;
 
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
 
     align-items: center;
 
@@ -153,20 +155,23 @@
     white-space: nowrap;
 
     /*
-     * On very small phones the navigation can
-     * be horizontally scrolled instead of wrapping.
+     * IMPORTANT:
+     * Dropdowns must be allowed to extend outside
+     * the navigation container.
      */
-    overflow-x: auto;
-
-    overflow-y: visible;
+    overflow: visible !important;
 
     scrollbar-width: none;
 
     -webkit-overflow-scrolling: touch;
+
+    position: relative;
   }
 
 
-  /* Hide mobile scrollbar */
+  /* -------------------------------------------------------
+     HIDE MOBILE SCROLLBAR
+     ------------------------------------------------------- */
 
   .nav-links::-webkit-scrollbar {
     display: none;
@@ -232,7 +237,7 @@
 
 
   /* -------------------------------------------------------
-     APPS MENU
+     GAMES / APPS MENU
      ------------------------------------------------------- */
 
   .nav-links > .apps-menu {
@@ -293,13 +298,19 @@
       0 12px 30px rgba(0, 0, 0, 0.12),
       0 3px 10px rgba(0, 0, 0, 0.06);
 
-    z-index: 1000;
+    z-index: 10000;
   }
 
 
   /* -------------------------------------------------------
      SPACE SUBMENU
      ------------------------------------------------------- */
+
+  /*
+   * The Space submenu remains inside the Lab panel
+   * on mobile. It can expand vertically without
+   * affecting the top-level navigation.
+   */
 
   .lab-submenu-panel {
 
@@ -322,7 +333,7 @@
 
 
   /* -------------------------------------------------------
-     APPS DROPDOWN
+     GAMES DROPDOWN
      ------------------------------------------------------- */
 
   .apps-menu-panel {
@@ -351,7 +362,7 @@
       0 12px 30px rgba(0, 0, 0, 0.12),
       0 3px 10px rgba(0, 0, 0, 0.06);
 
-    z-index: 1000;
+    z-index: 10000;
   }
 
 }
@@ -394,6 +405,14 @@
 
     padding-left: 8px;
     padding-right: 8px;
+
+    /*
+     * Keep all top-level navigation items
+     * on one row.
+     */
+    flex-wrap: nowrap !important;
+
+    overflow: visible !important;
   }
 
 }

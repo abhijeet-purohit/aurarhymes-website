@@ -64,13 +64,13 @@
   position: absolute;
 
   top: calc(100% + 10px);
+
   left: 50%;
 
   transform: translateX(-50%);
 
   /*
-   * Reduced from 238px.
-   * Matches the compact Apps dropdown.
+   * Compact width.
    */
   width: 190px;
 
@@ -79,8 +79,7 @@
   background: #ffffff;
 
   /*
-   * Reduced padding to remove excessive
-   * white space.
+   * Compact padding.
    */
   padding: 6px;
 
@@ -92,7 +91,7 @@
     0 12px 30px rgba(0, 0, 0, 0.12),
     0 3px 10px rgba(0, 0, 0, 0.06);
 
-  z-index: 1000;
+  z-index: 10000;
 }
 
 
@@ -213,7 +212,7 @@
   left: calc(100% + 8px);
 
   /*
-   * Reduced from 220px.
+   * Compact submenu width.
    */
   width: 190px;
 
@@ -231,7 +230,7 @@
     0 12px 30px rgba(0, 0, 0, 0.12),
     0 3px 10px rgba(0, 0, 0, 0.06);
 
-  z-index: 1001;
+  z-index: 10001;
 }
 
 
@@ -307,8 +306,19 @@
 
 @media (max-width: 768px) {
 
+  /*
+   * IMPORTANT:
+   * Lab itself occupies only its normal navigation
+   * width. It must never become 100% wide.
+   */
+
   .lab-menu {
-    width: 100%;
+
+    width: auto;
+
+    flex: 0 0 auto;
+
+    position: relative;
   }
 
 
@@ -318,9 +328,11 @@
 
   .lab-menu > summary {
 
-    width: 100%;
+    width: auto;
 
-    justify-content: space-between;
+    justify-content: center;
+
+    white-space: nowrap;
   }
 
 
@@ -330,23 +342,41 @@
 
   .lab-menu-panel {
 
-    position: static;
+    /*
+     * CRITICAL FIX:
+     * Absolute positioning removes the dropdown
+     * from normal document flow.
+     *
+     * Therefore Games, Aura and Store do not move.
+     */
 
-    transform: none;
+    position: absolute;
 
-    width: 100%;
+    top: calc(100% + 8px);
 
-    margin-top: 6px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+
+    margin-top: 0;
 
     box-sizing: border-box;
 
     padding: 6px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: #ffffff;
 
-    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 3px 10px rgba(0, 0, 0, 0.06);
+
+    z-index: 10000;
   }
 
 
@@ -367,6 +397,13 @@
      Space submenu
      ------------------------------------------------------- */
 
+  /*
+   * Keep the Space submenu INSIDE the floating Lab panel.
+   *
+   * This allows the panel to grow vertically without
+   * affecting the top-level navigation row.
+   */
+
   .lab-submenu-panel {
 
     position: static;
@@ -384,6 +421,8 @@
     background: rgba(255, 255, 255, 0.55);
 
     box-shadow: none;
+
+    border: none;
   }
 
 
