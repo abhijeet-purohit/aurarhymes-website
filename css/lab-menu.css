@@ -1,0 +1,438 @@
+/* =========================================================
+   AURA RHYMES — LAB MENU
+   Compact dropdown
+   Matches Apps dropdown visual style
+   ========================================================= */
+
+
+/* =========================================================
+   LAB MENU
+   ========================================================= */
+
+.lab-menu {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* ---------------------------------------------------------
+   LAB SUMMARY
+   --------------------------------------------------------- */
+
+.lab-menu > summary {
+  list-style: none;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  user-select: none;
+}
+
+.lab-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.lab-menu > summary::marker {
+  display: none;
+}
+
+
+/* =========================================================
+   LAB ARROW
+   ========================================================= */
+
+.lab-menu-arrow {
+  display: inline-block;
+
+  font-size: 0.75em;
+
+  transition: transform 0.2s ease;
+}
+
+.lab-menu[open] > summary .lab-menu-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   MAIN LAB DROPDOWN
+   ========================================================= */
+
+.lab-menu-panel {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  /*
+   * Reduced from 238px.
+   * Matches the compact Apps dropdown.
+   */
+  width: 190px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  /*
+   * Reduced padding to remove excessive
+   * white space.
+   */
+  padding: 6px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   LAB MAIN ITEMS
+   ========================================================= */
+
+.lab-menu-panel > a,
+.lab-submenu > summary {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  /*
+   * Compact item height.
+   */
+  padding: 9px 11px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  color: #333333;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+/* =========================================================
+   REMOVE NATIVE SUBMENU MARKER
+   ========================================================= */
+
+.lab-submenu > summary {
+  list-style: none;
+}
+
+.lab-submenu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.lab-submenu > summary::marker {
+  display: none;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+   Same visual language as Apps
+   ========================================================= */
+
+.lab-menu-panel > a:hover,
+.lab-submenu > summary:hover {
+
+  background: #fff4c7;
+
+  color: #ff6b61;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   SPACE ARROW
+   ========================================================= */
+
+.lab-submenu-arrow {
+
+  display: inline-block;
+
+  font-size: 0.9em;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.lab-submenu[open] > summary .lab-submenu-arrow {
+
+  transform: rotate(90deg);
+
+  color: #ff6b61;
+}
+
+
+/* =========================================================
+   SPACE SUBMENU
+   ========================================================= */
+
+.lab-submenu {
+  position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   SPACE SUBMENU PANEL
+   --------------------------------------------------------- */
+
+.lab-submenu-panel {
+
+  position: absolute;
+
+  top: -6px;
+
+  left: calc(100% + 8px);
+
+  /*
+   * Reduced from 220px.
+   */
+  width: 190px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  padding: 6px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+
+  z-index: 1001;
+}
+
+
+/* =========================================================
+   SPACE SUBMENU LINKS
+   ========================================================= */
+
+.lab-submenu-panel a {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  /*
+   * Compact submenu items.
+   */
+  padding: 8px 11px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  color: #333333;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+/* =========================================================
+   SUBMENU HOVER
+   ========================================================= */
+
+.lab-submenu-panel a:hover {
+
+  background: #fff4c7;
+
+  color: #ff6b61;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   TABLET
+   Prevent submenu from going outside viewport
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+  .lab-submenu-panel {
+
+    left: auto;
+
+    right: calc(100% + 8px);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .lab-menu {
+    width: 100%;
+  }
+
+
+  /* -------------------------------------------------------
+     Lab summary
+     ------------------------------------------------------- */
+
+  .lab-menu > summary {
+
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+
+  /* -------------------------------------------------------
+     Main Lab panel
+     ------------------------------------------------------- */
+
+  .lab-menu-panel {
+
+    position: static;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-top: 6px;
+
+    box-sizing: border-box;
+
+    padding: 6px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: none;
+  }
+
+
+  /* -------------------------------------------------------
+     Main Lab items
+     ------------------------------------------------------- */
+
+  .lab-menu-panel > a,
+  .lab-submenu > summary {
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     Space submenu
+     ------------------------------------------------------- */
+
+  .lab-submenu-panel {
+
+    position: static;
+
+    width: 100%;
+
+    margin-top: 4px;
+
+    box-sizing: border-box;
+
+    padding: 5px;
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow: none;
+  }
+
+
+  /* -------------------------------------------------------
+     Space submenu links
+     ------------------------------------------------------- */
+
+  .lab-submenu-panel a {
+
+    padding: 8px 11px;
+
+    border-radius: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .lab-menu-panel {
+
+    padding: 5px;
+  }
+
+
+  .lab-menu-panel > a,
+  .lab-submenu > summary {
+
+    font-size: 14px;
+
+    padding: 9px 11px;
+  }
+
+
+  .lab-submenu-panel {
+
+    padding: 5px;
+  }
+
+
+  .lab-submenu-panel a {
+
+    font-size: 13px;
+
+    padding: 8px 10px;
+  }
+
+}

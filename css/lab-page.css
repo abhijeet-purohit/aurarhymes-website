@@ -1,0 +1,67 @@
+/* Aura Rhymes Lab — full-screen experience pages */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #07070a;
+  font-family: "Baloo 2", system-ui, sans-serif;
+}
+
+.lab-page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #07070a;
+}
+
+.lab-page iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.lab-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  color: white;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(91, 140, 255, .18), transparent 35%),
+    #07070a;
+}
+
+.lab-placeholder-card {
+  max-width: 620px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+}
+
+.lab-placeholder h1 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 5vw, 52px);
+}
+
+.lab-placeholder p {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 21px);
+  line-height: 1.5;
+  opacity: .9;
+}
