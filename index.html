@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/png" href="images/aura1.jpeg">
-  <title>Aura Rhymes | Safe Kids Rhymes</title>
+  <title>Aura Rhymes™ | Safe Kids Rhymes</title>
 
   <!-- SEO -->
   <meta name="description" content="Aura Rhymes creates fun, safe and educational rhymes for toddlers and preschool kids. Watch engaging kids videos.">
@@ -13,16 +13,21 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Site CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/lab-menu.css">
+  <link rel="stylesheet" href="css/apps-menu.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
- 
+
+
+  <script src="js/aura-script.js" defer></script>
 </head>
-<script src="js/aura-script.js" defer></script>
+
 <body>
 
 <!-- HEADER -->
@@ -30,45 +35,97 @@
 
   <div class="logo-section">
     <img src="images/aura1.jpeg" class="logo-img" alt="Aura Rhymes">
-    <span class="logo-text">Aura Rhymes</span>
+    <span class="logo-text">Aura Rhymes™</span>
   </div>
 
-  <nav class="nav-links">
+  <nav class="nav-links" aria-label="Main navigation">
+
     <a href="#videos">Videos</a>
     <a href="#songs">Songs</a>
-    <a href="#games">Games</a>
-    <a href="#apps">Apps</a>
-    <a href="#about">We</a>    
-    <a href="#store">Store</a>    
-    <div class="nav-dropdown">
-      <a href="#" class="nav-dropbtn">Lab ▾</a>
 
-      <div class="nav-dropdown-content">
-        <a href="lab.html" target="_blank" rel="noopener noreferrer">
-          Solar System
+    <!-- LAB -->
+    <details class="lab-menu">
+      <summary>
+        <span>Lab</span>
+        <span class="lab-menu-arrow" aria-hidden="true">▾</span>
+      </summary>
+
+      <div class="lab-menu-panel">
+
+        <!-- SPACE -->
+        <details class="lab-submenu">
+          <summary>
+            <span>Space</span>
+            <span class="lab-submenu-arrow" aria-hidden="true">▸</span>
+          </summary>
+
+          <div class="lab-submenu-panel">
+
+            <a href="solar-system.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Solar System
+            </a>
+
+            <a href="earth.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Earth
+            </a>
+
+            <a href="space-missions.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Space Missions
+            </a>
+
+            <a href="planets.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Planets
+            </a>
+
+            <a href="asteroids.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              Asteroids
+            </a>
+
+          </div>
+        </details>
+
+        <!-- ABC EXPLORER -->
+        <a href="abc-explorer.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          ABC Explorer
         </a>
+
       </div>
-    </div>
+    </details>
+
+<details class="apps-menu">
+  <summary>
+    <span>Apps</span>
+    <span class="apps-menu-arrow" aria-hidden="true">▾</span>
+  </summary>
+
+  <div class="apps-menu-panel">
+    <a href="#games">Games</a>
+    <a href="#mobile-apps">Mobile Apps</a>
+  </div>
+</details>
+    <a href="#about">We</a>
+    <a href="#store">Store</a>
+
   </nav>
 
 </header>
+
+
 <!-- BANNER / HERO -->
 <section class="hero-banner">
-
   <div class="hero-bg"></div>
-  <!--
-  <div class="hero-content">
-    <h2 class="hero-header">Fun Learning With Aura 🎵</h2>   
-     <br/><br/>
-    <div class="hero-buttons">
-      <a href="#videos" class="btn-watch">▶ Watch Now</a>
-      <a href="https://www.youtube.com/@aura-rhymes" target="_blank" class="btn-subscribe">
-        Subscribe ❤️
-      </a>
-    </div>
-  </div>
-  -->
-
 </section>
 
 
@@ -79,252 +136,279 @@
     <h2>Welcome!</h2>
   </div>
 
-<div class="about-content">
+  <div class="about-content">
 
-  <p class="desc">
-    Aura Rhymes is a fun and colorful kids channel where little explorers learn Rhymes, Shapes, Colours, and much more in a joyful 
-    and easy way. 
-    🌱🐮🐔 
-    With cute characters Aura Rhymes turn everyday learning into a delightful experience. 
-  </p>
-  <br/>
+    <p class="desc">
+      Aura Rhymes™ is a fun and colorful kids channel where little explorers learn Rhymes, Shapes, Colours, and much more in a joyful
+      and easy way.
+      🌱🐮🐔
+      With cute characters Aura Rhymes turn everyday learning into a delightful experience.
+    </p>
+    <br/>
 
-  <p class="desc">
-    Each video helps children build curiosity, confidence, and imagination while enjoying engaging rhymes and stories. 
-  </p>
-  <br/>
+    <p class="desc">
+      Each video helps children build curiosity, confidence, and imagination while enjoying engaging rhymes and stories.
+    </p>
+    <br/>
 
-  <!-- WHAT KIDS WILL LEARN-->
-  <div class="about-header">
-    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>What Kids Learn</h2>
-  </div>
+    <!-- WHAT KIDS WILL LEARN -->
+    <div class="about-header">
+      <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
+      <h2>What Kids Learn</h2>
+    </div>
 
-  <div class="features">
-    <div class="feature">💡 Art & Creativity 💚</div>    
-    <div class="feature">🎨 Colours & Shapes 🔷</div>
-    <div class="feature">🎵 Rhymes & Stories 📖</div>
-    <div class="feature">🌿 Nature & Animals 🐶</div>
-    <div class="feature">🌱 Languages & Pronunciation 🗣️</div>
-    <div class="feature">🔢 Basic Math & Life Lessons 🧠</div>    
-    
-  </div>
-  <br/>
-<!-- WHO IS IT FOR -->  
-  <div class="about-header">
-    <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
-    <h2>Who Is It For</h2>
-  </div>
-  
-  <div class="cards">
-    <div class="card">👶 Toddlers (1–2 years)</div>
-    <div class="card">🧒 Kids (3–8 years)</div>
-    <div class="card">👨‍👩‍👧 Parents</div>
-    <div class="card">🏫 Teachers</div>
+    <div class="features">
+      <div class="feature">💡 Art & Creativity 💚</div>
+      <div class="feature">🎨 Colours & Shapes 🔷</div>
+      <div class="feature">🎵 Rhymes & Stories 📖</div>
+      <div class="feature">🌿 Nature & Animals 🐶</div>
+      <div class="feature">🌱 Languages & Pronunciation 🗣️</div>
+      <div class="feature">🔢 Basic Math & Life Lessons 🧠</div>
+    </div>
+
+    <br/>
+
+    <!-- WHO IS IT FOR -->
+    <div class="about-header">
+      <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
+      <h2>Who Is It For</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">👶 Toddlers (1–2 years)</div>
+      <div class="card">🧒 Kids (3–8 years)</div>
+      <div class="card">👨‍👩‍👧 Parents</div>
+      <div class="card">🏫 Teachers</div>
+    </div>
+
   </div>
 </section>
 
 
 <!-- VIDEOS -->
 <section id="videos">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Videos</h2>
   </div>
-    <p class="desc">
-      Discover the most loved and widely enjoyed videos from Aura Rhymes! These are the favorites that children keep coming back 
-      to—filled with fun, music, and joyful learning.
-    </p>
-  <h2>✨ Start Watching</h2>
-    <p class="desc">Explore our most popular videos below and join thousands of happy kids learning with Aura Rhymes every day!</p>    
 
-    <br/> <br/>
-  <div class="video-wrapper">
-
-  <div class="video-slider" id="videoSlider">
-    <!-- <button class="scroll-btn left" onclick="manualScroll(-1)">❮</button> -->
-
-      <!-- VIDEO CARD -->
-      <a href="https://www.youtube.com/embed/oRWAEaua3ww" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/oRWAEaua3ww/hqdefault.jpg">
-        </div>
-      </a>
-	  
-      <a href="https://www.youtube.com/embed/6JWERjXKlqM" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/6JWERjXKlqM/hqdefault.jpg">
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/embed/lnWYw42ApXA" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/lnWYw42ApXA/hqdefault.jpg">
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/embed/eK1Q_dFHrUk" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/eK1Q_dFHrUk/hqdefault.jpg">
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/embed/42TrxSb_xWk" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/42TrxSb_xWk/hqdefault.jpg">
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/embed/6yFXYboHvYc" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/6yFXYboHvYc/hqdefault.jpg">
-        </div>
-      </a>
-      <a href="https://www.youtube.com/embed/g_3EYC3IEw4" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/g_3EYC3IEw4/hqdefault.jpg">
-        </div>
-      </a>
-	  
-      <a href="https://www.youtube.com/embed/fcKFk22Up3E" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/fcKFk22Up3E/hqdefault.jpg">
-        </div>
-      </a>
-    </div>
-  <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
-  </div>
-  <!-- LATEST VIDEOS-->
-  <h2>🆕 Latest Videos</h2>
   <p class="desc">
-      Stay up to date with the newest and most exciting releases from Aura Rhymes! Our latest videos bring fresh rhymes, fun 
-      stories, and engaging learning experiences for young minds. 
+    Discover the most loved and widely enjoyed videos from Aura Rhymes! These are the favorites that children keep coming back
+    to—filled with fun, music, and joyful learning.
   </p>
-  <br/>
-  <h2>🌱 Keep Learning Every Day</h2>
+
+  <h2>✨ Start Watching</h2>
+
   <p class="desc">
-    We upload <b>daily</b> a new video, so that kids always have something new to discover. Don’t forget to check back <b>everyday</b> 
+    Explore our most popular videos below and join thousands of happy kids learning with Aura Rhymes every day!
+  </p>
+
+  <br/><br/>
+
+  <div class="video-wrapper">
+    <div class="video-slider" id="videoSlider">
+
+      <a href="https://www.youtube.com/embed/oRWAEaua3ww" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/oRWAEaua3ww/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/6JWERjXKlqM" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/6JWERjXKlqM/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/lnWYw42ApXA" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/lnWYw42ApXA/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/eK1Q_dFHrUk" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/eK1Q_dFHrUk/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/42TrxSb_xWk" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/42TrxSb_xWk/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/6yFXYboHvYc" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/6yFXYboHvYc/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/g_3EYC3IEw4" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/g_3EYC3IEw4/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/embed/fcKFk22Up3E" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/fcKFk22Up3E/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- LATEST VIDEOS -->
+  <h2>🆕 Latest Videos</h2>
+
+  <p class="desc">
+    Stay up to date with the newest and most exciting releases from Aura Rhymes! Our latest videos bring fresh rhymes, fun
+    stories, and engaging learning experiences for young minds.
+  </p>
+
+  <br/>
+
+  <h2>🌱 Keep Learning Every Day</h2>
+
+  <p class="desc">
+    We upload <b>daily</b> a new video, so that kids always have something new to discover. Don’t forget to check back <b>everyday</b>
     and enjoy the latest from Aura Rhymes!
   </p>
+
   <br/>
+
   <div class="video-wrapper">
+    <div class="video-slider">
 
-  <div class="video-slider" id="videoSlider">
-    <!-- <button class="scroll-btn left" onclick="manualScroll(-1)">❮</button> -->
-
-      <!-- VIDEO CARD -->
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh1tICxH5f7czrBO6jbyBjm" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh1tICxH5f7czrBO6jbyBjm" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/Cf0rduMe8So/hqdefault.jpg">
-        </div>
-      </a>
-	  
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkgdZeEkNNs3qtslN2oWs-a7" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/lZ4clrWOPWs/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/Cf0rduMe8So/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkj4eGTcDuFJVFQ1ugVL3SLm" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkgdZeEkNNs3qtslN2oWs-a7" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/Qv0xkwT5edU/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/lZ4clrWOPWs/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiRjZ3BizIUJ6anyRPU7tv3" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkj4eGTcDuFJVFQ1ugVL3SLm" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/VuPyx4vy4_Q/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/Qv0xkwT5edU/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh8lvb4DA2sbLIOu__6XhTF" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiRjZ3BizIUJ6anyRPU7tv3" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/zruBg6_cu4M/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/VuPyx4vy4_Q/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkjpt89fCbwDimeYySj111B3" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkh8lvb4DA2sbLIOu__6XhTF" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/K_Yvk2q_2pw/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/zruBg6_cu4M/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <!-- COPY ABOVE BLOCK FOR MORE VIDEOS -->
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkjpt89fCbwDimeYySj111B3" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/K_Yvk2q_2pw/hqdefault.jpg" alt="">
+        </div>
+      </a>
 
     </div>
-  <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
   </div>
+
 </section>
+
 
 <!-- SONGS -->
 <section id="songs">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Songs</h2>
   </div>
-  
+
   <p class="desc">
-    Our original audio tracks are specially created for young children, combining catchy melodies with simple, 
+    Our original audio tracks are specially created for young children, combining catchy melodies with simple,
     meaningful lyrics that make learning fun and memorable.
   </p>
+
   <br/>
+
   <p class="desc">
-    You can listen our songs anytime, anywhere on all major platforms including <b>YouTube Music</b>, <b>Spotify</b>, <b>Apple Music</b>, <b>Amazon</b>, and more.
+    You can listen our songs anytime, anywhere on all major platforms including <b>YouTube Music</b>, <b>Spotify</b>,
+    <b>Apple Music</b>, <b>Amazon</b>, and more.
   </p>
+
 </section>
 
 
 <!-- GAMES -->
 <section id="games">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Games</h2>
   </div>
-  
+
   <p class="desc">
     Our games are thoughtfully designed for toddlers and preschool kids to build essential early skills in a playful and engaging way.
   </p>
+
   <br/>
+
   <p class="desc">
     You can download our games from Android and Apple app store.
   </p>
+
 </section>
 
 
 <!-- APPS -->
 <section id="apps">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Apps</h2>
   </div>
-  
+
   <p class="desc">
     We are working on some android apps. Come-back soon to know more.
   </p>
+
 </section>
 
 
 <!-- OUR STORY -->
 <section id="about">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Our Story</h2>
   </div>
-  
-  <p class="desc">
 
-    We are a creative, family-driven team dedicated to building high-quality, safe, and meaningful content for children. 
-  </p>
   <p class="desc">
-    Our team includes kids, mothers, and parents, allowing us to truly understand the needs and learning 
-    patterns of young minds. 
+    We are a creative, family-driven team dedicated to building high-quality, safe, and meaningful content for children.
   </p>
-  <br/>
+
   <p class="desc">
-    Aura Rhymes is owned by <b>AS Entertainment</b>, a creative studio with a passion for storytelling and animation. 
+    Our team includes kids, mothers, and parents, allowing us to truly understand the needs and learning
+    patterns of young minds.
   </p>
+
   <br/>
-  <!-- What DO WE DO-->
+
+  <p class="desc">
+    Aura Rhymes is owned by <b>AS Entertainment</b>, a creative studio with a passion for storytelling and animation.
+  </p>
+
+  <br/>
+
+  <!-- WHAT DO WE DO -->
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>What Do We Do?</h2>
@@ -336,141 +420,146 @@
     <div class="card">🎮 Games</div>
     <div class="card">✨ Apps</div>
   </div>
+
   <br/>
-<!-- MULTILINGUAL Videos -->
+
+  <!-- MULTILINGUAL VIDEOS -->
   <h2>🎬 Other Language Videos</h2>
+
   <p class="desc">
     Aura Rhymes brings joyful learning to children across the world through a wide range of languages.
-    By offering content in different languages, we help children connect with their roots while also 
+    By offering content in different languages, we help children connect with their roots while also
     exploring new cultures and sounds.
   </p>
+
   <br/>
 
-<h2>🌐 Languages Supported</h2>
-<div class="languages-grid">
+  <h2>🌐 Languages Supported</h2>
 
-  <div class="lang-card"><img src="https://flagcdn.com/w40/us.png"> English</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Hindi</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Marathi</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Bengali</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Odia</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Sanskrit</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Kannada</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Telugu</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Tamil</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Malayalam</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Punjabi</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/in.png"> Urdu</div>
+  <div class="languages-grid">
 
-  <div class="lang-card"><img src="https://flagcdn.com/w40/sa.png"> Arabic</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/tr.png"> Turkish</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/es.png"> Spanish</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/pt.png"> Portuguese</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/fr.png"> French</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/de.png"> German</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/ru.png"> Russian</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/vn.png"> Vietnamese</div>
-  <div class="lang-card"><img src="https://flagcdn.com/w40/my.png"> Malay</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/us.png" alt=""> English</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Hindi</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Marathi</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Bengali</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Odia</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Sanskrit</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Kannada</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Telugu</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Tamil</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Malayalam</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Punjabi</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/in.png" alt=""> Urdu</div>
 
-</div>
-<br/>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/sa.png" alt=""> Arabic</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/tr.png" alt=""> Turkish</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/es.png" alt=""> Spanish</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/pt.png" alt=""> Portuguese</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/fr.png" alt=""> French</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/de.png" alt=""> German</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/ru.png" alt=""> Russian</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/vn.png" alt=""> Vietnamese</div>
+    <div class="lang-card"><img src="https://flagcdn.com/w40/my.png" alt=""> Malay</div>
+
+  </div>
+
+  <br/>
+
   <div class="video-wrapper">
 
-  <div class="video-slider" id="videoSlider">
-    <!-- <button class="scroll-btn left" onclick="manualScroll(-1)">❮</button> -->
+    <div class="video-slider">
 
-      <!-- VIDEO CARD -->
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkirLoT4Brm-6O_pCEFe0A0-" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkirLoT4Brm-6O_pCEFe0A0-" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/qImtao569w0/hqdefault.jpg">
-        </div>
-      </a>
-	  
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiojbbHgLvnsWrFHeeUQIvU" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/ZeMvg9nsE-k/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/qImtao569w0/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkinbhWABLdrWiGZqUfsW93Q" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiojbbHgLvnsWrFHeeUQIvU" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/xqjsg5jSsHM/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/ZeMvg9nsE-k/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkjpt89fCbwDimeYySj111B3" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkinbhWABLdrWiGZqUfsW93Q" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/-nM3GLikxus/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/xqjsg5jSsHM/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiWy8XDlI9fxhmgXSv2VxTs" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkjpt89fCbwDimeYySj111B3" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/42TrxSb_xWk/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/-nM3GLikxus/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/playlist?list=PLpRUHuJaTGkiWy8XDlI9fxhmgXSv2VxTs" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/Q4RpzyY_AV8/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/42TrxSb_xWk/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/aEXoJGOH1pI/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/Q4RpzyY_AV8/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/g_3EYC3IEw4/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/aEXoJGOH1pI/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/M5v0ffwXPVw/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/g_3EYC3IEw4/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/eK1Q_dFHrUk/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/M5v0ffwXPVw/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/S4SvktFeBSE/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/eK1Q_dFHrUk/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/nZb97guNAts/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/S4SvktFeBSE/hqdefault.jpg" alt="">
         </div>
       </a>
 
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
         <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/87q8kHGb3Og/hqdefault.jpg">
+          <img src="https://img.youtube.com/vi/nZb97guNAts/hqdefault.jpg" alt="">
         </div>
-      </a>	  
-	  
-      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" class="video-card">
-        <div class="thumbnail">
-          <img src="https://img.youtube.com/vi/YN9Vb0qQ3Yk/hqdefault.jpg">
-        </div>
-      </a>		  
+      </a>
 
-      <!-- COPY ABOVE BLOCK FOR MORE VIDEOS -->
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/87q8kHGb3Og/hqdefault.jpg" alt="">
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=DWtZ9JhLmbE" target="_blank" rel="noopener noreferrer" class="video-card">
+        <div class="thumbnail">
+          <img src="https://img.youtube.com/vi/YN9Vb0qQ3Yk/hqdefault.jpg" alt="">
+        </div>
+      </a>
 
     </div>
-
-  <!--  <button class="scroll-btn right" onclick="manualScroll(1)">❯</button>  -->
   </div>
+
 </section>
+
+
+<!-- CTA -->
 <section class="cta-section">
 
   <h2>🌟 Join Thousands of Kids!</h2>
@@ -479,61 +568,86 @@
     Learn every day 🎵✨
   </p>
 
-  <a href="https://www.youtube.com/@aura-rhymes" target="_blank" class="btn-subscribe">
-        Subscribe ❤️
+  <a href="https://www.youtube.com/@aura-rhymes"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="btn-subscribe">
+    Subscribe ❤️
   </a>
 
 </section>
 
+
 <!-- STORE -->
 <section id="store">
+
   <div class="about-header">
     <img src="images/aura1.jpeg" alt="Aura Character" class="about-avatar">
     <h2>Store</h2>
   </div>
-  
-  <p class="desc">
 
+  <p class="desc">
     We're on the verge of launching our store. Do comeback soon for products and offers.
   </p>
+
 </section>
+
 
 <!-- SAFETY -->
 <section>
+
   <h2>Safety & Privacy</h2>
+
   <p class="desc">
     Aura Rhymes is committed to providing a safe and child-friendly experience.
     We do not collect personal data from children and ensure all content is age-appropriate.
   </p>
+
 </section>
+
 
 <!-- FOOTER -->
 <footer>
+
   <p>Connect with Aura Rhymes</p>
 
   <div class="social-icons">
-    <a href="https://www.youtube.com/@aura-rhymes" target="_blank">
+
+    <a href="https://www.youtube.com/@aura-rhymes"
+       target="_blank"
+       rel="noopener noreferrer">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
     </a>
 
-    <a href="https://www.facebook.com/share/14SkNsgBtNd" target="_blank">
+    <a href="https://www.facebook.com/share/14SkNsgBtNd"
+       target="_blank"
+       rel="noopener noreferrer">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook">
     </a>
 
-    <a href="https://www.instagram.com/aurakidsrhymes?igsh=azZ3M2RxcWVrZG5t" target="_blank">
+    <a href="https://www.instagram.com/aurarhymes?igsh=azZ3M2RxcWVrZG5t"
+       target="_blank"
+       rel="noopener noreferrer">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
     </a>
 
-    <a href="mailto:abhijeet.purohit01@gmail.com">
+    <a href="mailto:contact@aurarhymes.com">
       <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
     </a>
-	
-	<a href="https://x.com/AuraKidsRhymes" target="_blank">
-	  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X (Twitter)">
-	</a>
+
+    <a href="https://x.com/aurarhymes"
+       target="_blank"
+       rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X (Twitter)">
+    </a>
+
   </div>
-  <p>© 2026 Aura Rhymes. All Rights Reserved.</p>
+
+  <p>© 2026 Aura Rhymes™. All Rights Reserved.</p>
+
 </footer>
-<button id="backToTopBtn">↑</button>
+
+<button id="backToTopBtn" type="button">↑</button>
+
 </body>
 </html>
