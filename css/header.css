@@ -1,3 +1,7 @@
+/* =========================================================
+   AURA RHYMES — MAIN HEADER
+   ========================================================= */
+
 .main-header {
   position: sticky;
   top: 0;
@@ -12,8 +16,13 @@
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .logo-section {
   display: flex;
@@ -32,8 +41,14 @@
   font-size: 1.2rem;
 }
 
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -50,40 +65,158 @@
 
 
 /* =========================================================
-   AURA RHYMES — MOBILE NAVIGATION
+   MOBILE NAVIGATION
+   Single horizontal row
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  .nav-links {
-    display: grid;
-
+  .main-header {
     /*
-     * Two columns for the normal navigation.
-     * This prevents Lab and Apps from taking
-     * an unnecessarily large full-width row.
+     * Stack logo and navigation vertically.
+     * Logo remains centered above the navigation.
      */
-    grid-template-columns: auto auto;
+    flex-direction: column;
 
     justify-content: center;
+    align-items: center;
+
+    padding: 10px 0 8px;
+
+    /*
+     * Allow dropdowns to extend outside the header.
+     */
+    overflow: visible;
+  }
+
+
+  /* -------------------------------------------------------
+     LOGO
+     ------------------------------------------------------- */
+
+  .logo-section {
+    justify-content: center;
+
+    width: 100%;
+
+    margin-bottom: 5px;
+  }
+
+
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+
+  /* -------------------------------------------------------
+     NAVIGATION
+     ------------------------------------------------------- */
+
+  .nav-links {
+
+    /*
+     * IMPORTANT:
+     * Use FLEX, NOT GRID.
+     *
+     * This keeps all navigation items on one row.
+     */
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
 
     align-items: center;
 
-    column-gap: 42px;
+    justify-content: center;
 
-    row-gap: 20px;
+    /*
+     * Responsive spacing.
+     */
+    gap: clamp(13px, 3.5vw, 25px);
 
     width: 100%;
 
     box-sizing: border-box;
 
-    padding: 12px 20px 18px;
+    padding: 8px 10px 10px;
+
+    /*
+     * Never create a second navigation row.
+     */
+    white-space: nowrap;
+
+    /*
+     * On very small phones the navigation can
+     * be horizontally scrolled instead of wrapping.
+     */
+    overflow-x: auto;
+
+    overflow-y: visible;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
   }
 
 
-  /* Normal navigation links */
+  /* Hide mobile scrollbar */
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     NORMAL NAVIGATION LINKS
+     ------------------------------------------------------- */
 
   .nav-links > a {
+
+    width: auto;
+
+    flex: 0 0 auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: 500;
+  }
+
+
+  /* -------------------------------------------------------
+     LAB MENU
+     ------------------------------------------------------- */
+
+  .nav-links > .lab-menu {
+
+    width: auto;
+
+    flex: 0 0 auto;
+
+    display: block;
+
+    position: relative;
+  }
+
+
+  .nav-links > .lab-menu > summary {
+
     width: auto;
 
     display: inline-flex;
@@ -93,18 +226,20 @@
     justify-content: center;
 
     white-space: nowrap;
+
+    cursor: pointer;
   }
 
 
-  /*
-   * Lab and Apps should behave like normal
-   * navigation items — NOT occupy an entire row.
-   */
+  /* -------------------------------------------------------
+     APPS MENU
+     ------------------------------------------------------- */
 
-  .nav-links > .lab-menu,
   .nav-links > .apps-menu {
 
     width: auto;
+
+    flex: 0 0 auto;
 
     display: block;
 
@@ -112,7 +247,6 @@
   }
 
 
-  .nav-links > .lab-menu > summary,
   .nav-links > .apps-menu > summary {
 
     width: auto;
@@ -124,19 +258,142 @@
     justify-content: center;
 
     white-space: nowrap;
+
+    cursor: pointer;
   }
 
 
-  /*
-   * Dropdown panels themselves can still
-   * become full-width inside the mobile
-   * navigation when opened.
-   */
+  /* -------------------------------------------------------
+     LAB DROPDOWN
+     ------------------------------------------------------- */
 
-  .lab-menu-panel,
+  .lab-menu-panel {
+
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+
+    margin-top: 0;
+
+    box-sizing: border-box;
+
+    padding: 6px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 3px 10px rgba(0, 0, 0, 0.06);
+
+    z-index: 1000;
+  }
+
+
+  /* -------------------------------------------------------
+     SPACE SUBMENU
+     ------------------------------------------------------- */
+
+  .lab-submenu-panel {
+
+    position: static;
+
+    width: 100%;
+
+    margin-top: 4px;
+
+    box-sizing: border-box;
+
+    padding: 5px;
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow: none;
+  }
+
+
+  /* -------------------------------------------------------
+     APPS DROPDOWN
+     ------------------------------------------------------- */
+
   .apps-menu-panel {
 
-    width: min(190px, calc(100vw - 40px));
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+
+    margin-top: 0;
+
+    box-sizing: border-box;
+
+    padding: 6px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 3px 10px rgba(0, 0, 0, 0.06);
+
+    z-index: 1000;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .main-header {
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+
+
+  .logo-section {
+    margin-bottom: 3px;
+  }
+
+
+  .logo-img {
+    width: 33px;
+    height: 33px;
+  }
+
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+
+  .nav-links {
+
+    /*
+     * Slightly tighter spacing on small phones.
+     */
+    gap: 12px;
+
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
 }
