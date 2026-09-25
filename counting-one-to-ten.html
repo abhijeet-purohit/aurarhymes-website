@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aura Counting 1–10</title>
+<link rel="stylesheet" href="css/counting-one-to-ten.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img
+      class="mascot"
+      src="https://aurarhymes.com/images/aura1.jpeg"
+      alt="Aura Rhymes mascot"
+      onerror="this.onerror=null;this.src='images/aura1.jpeg';"
+    >
+    <span class="brand-name">Aura Rhymes <span class="brand-divider">-</span> Counting 1 to 10</span>
+  </div>
+  <label class="language-wrap">
+    <span id="languageLabel">Language</span>
+    <select id="languageSelect" aria-label="Select language"></select>
+  </label>
+</header>
+<main>
+  <section class="hero">
+    <h1 id="title"></h1>
+    <p id="instruction"></p>
+  </section>
+  <section class="number-grid" id="numberGrid" aria-label="Numbers 1 to 10"></section>
+  <section class="controls">
+    <button id="hearButton" type="button"></button>
+    <button id="tryButton" type="button"></button>
+  </section>
+  <p id="feedback" class="feedback" aria-live="polite"></p>
+  <!-- Audio implementation note intentionally omitted from the user-facing UI. -->
+
+<footer class="widget-footer">
+  <div>© 2026 Aura Rhymes™. All Rights Reserved.</div>
+  <div class="footer-subtitle">A product of AS Edutainment</div>
+</footer>
+</main>
+<script id="localization-data" type="application/json">
+{"schemaVersion":"2.0","product":"Aura Rhymes - Counting 1 to 10","architecture":{"languageIsSeparateFromScript":true,"languageIsSeparateFromMarket":true,"audioPriority":["aura-recorded","browser-tts"],"rtlSupported":true},"groups":{"india":{"label":"India","families":["north-indian","south-indian","east-indian"]},"middle-east":{"label":"Middle East / West Asia","families":["middle-east-rtl","middle-east-ltr"]}},"familyLabels":{"north-indian":"North Indian","south-indian":"South Indian","east-indian":"East Indian","middle-east-rtl":"Middle East / RTL","middle-east-ltr":"Middle East / LTR"},"languages":{"hi":{"name":"Hindi","nativeName":"हिन्दी","family":"north-indian","script":"Devanagari","region":"india","direction":"ltr","tts":"hi-IN"},"mr":{"name":"Marathi","nativeName":"मराठी","family":"north-indian","script":"Devanagari","region":"india","direction":"ltr","tts":"mr-IN"},"sa":{"name":"Sanskrit","nativeName":"संस्कृत","family":"north-indian","script":"Devanagari","region":"india","direction":"ltr","tts":"sa-IN"},"pa-Guru":{"name":"Punjabi (Gurmukhi)","nativeName":"ਪੰਜਾਬੀ","family":"north-indian","script":"Gurmukhi","region":"india","direction":"ltr","tts":"pa-IN"},"kn":{"name":"Kannada","nativeName":"ಕನ್ನಡ","family":"south-indian","script":"Kannada","region":"india","direction":"ltr","tts":"kn-IN"},"te":{"name":"Telugu","nativeName":"తెలుగు","family":"south-indian","script":"Telugu","region":"india","direction":"ltr","tts":"te-IN"},"ta":{"name":"Tamil","nativeName":"தமிழ்","family":"south-indian","script":"Tamil","region":"india","direction":"ltr","tts":"ta-IN"},"ml":{"name":"Malayalam","nativeName":"മലയാളം","family":"south-indian","script":"Malayalam","region":"india","direction":"ltr","tts":"ml-IN"},"bn":{"name":"Bangla","nativeName":"বাংলা","family":"east-indian","script":"Bengali","region":"india","direction":"ltr","tts":"bn-IN"},"or":{"name":"Odia","nativeName":"ଓଡ଼ିଆ","family":"east-indian","script":"Odia","region":"india","direction":"ltr","tts":"or-IN"},"ar":{"name":"Arabic","nativeName":"العربية","family":"middle-east-rtl","script":"Arabic","region":"middle-east","direction":"rtl","tts":"ar-SA"},"tr":{"name":"Turkish","nativeName":"Türkçe","family":"middle-east-ltr","script":"Latin","region":"middle-east","direction":"ltr","tts":"tr-TR"},"ur":{"name":"Urdu","nativeName":"اردو","family":"middle-east-rtl","script":"Arabic-derived","region":"middle-east","direction":"rtl","tts":"ur-PK"},"fa":{"name":"Farsi / Persian","nativeName":"فارسی","family":"middle-east-rtl","script":"Persian","region":"middle-east","direction":"rtl","tts":"fa-IR"},"pa-Arab":{"name":"Punjabi (Shahmukhi)","nativeName":"پنجابی","family":"middle-east-rtl","script":"Shahmukhi","region":"middle-east","direction":"rtl","tts":"pa-PK"},"en":{"name":"English","nativeName":"English","family":"base","script":"Latin","region":"global","direction":"ltr","tts":"en-IN"}},"translations":{"hi":{"select":"भाषा चुनें","title":"आओ 1 से 10 तक गिनें!","instruction":"किसी संख्या पर टैप करें और सुनें।","hear":"सुनें","try":"फिर से कोशिश करें","great":"बहुत बढ़िया!","wrong":"फिर से कोशिश करें!","numbers":["एक","दो","तीन","चार","पाँच","छह","सात","आठ","नौ","दस"]},"mr":{"select":"भाषा निवडा","title":"चला 1 ते 10 मोजूया!","instruction":"संख्येवर टॅप करा आणि ऐका.","hear":"ऐका","try":"पुन्हा प्रयत्न करा","great":"खूप छान!","wrong":"पुन्हा प्रयत्न करा!","numbers":["एक","दोन","तीन","चार","पाच","सहा","सात","आठ","नऊ","दहा"]},"sa":{"select":"भाषा चुनुत","title":"आगच्छतु, १ तः १० पर्यन्तं गणयामः!","instruction":"संख्यां स्पृशत, श्रुणुत च।","hear":"श्रुणुत","try":"पुनः प्रयत्नं कुरुत","great":"साधु!","wrong":"पुनः प्रयत्नं कुरुत!","numbers":["एकम्","द्वे","त्रीणि","चत्वारि","पञ्च","षट्","सप्त","अष्ट","नव","दश"]},"pa-Guru":{"select":"ਭਾਸ਼ਾ ਚੁਣੋ","title":"ਆਓ 1 ਤੋਂ 10 ਤੱਕ ਗਿਣੀਏ!","instruction":"ਨੰਬਰ 'ਤੇ ਟੈਪ ਕਰੋ ਅਤੇ ਸੁਣੋ।","hear":"ਸੁਣੋ","try":"ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ","great":"ਬਹੁਤ ਵਧੀਆ!","wrong":"ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ!","numbers":["ਇੱਕ","ਦੋ","ਤਿੰਨ","ਚਾਰ","ਪੰਜ","ਛੇ","ਸੱਤ","ਅੱਠ","ਨੌਂ","ਦਸ"]},"kn":{"select":"ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ","title":"1 ರಿಂದ 10 ರವರೆಗೆ ಎಣಿಸೋಣ!","instruction":"ಸಂಖ್ಯೆಯನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಮತ್ತು ಕೇಳಿ.","hear":"ಕೇಳಿ","try":"ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ","great":"ಬಹಳ ಚೆನ್ನಾಗಿದೆ!","wrong":"ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ!","numbers":["ಒಂದು","ಎರಡು","ಮೂರು","ನಾಲ್ಕು","ಐದು","ಆರು","ಏಳು","ಎಂಟು","ಒಂಬತ್ತು","ಹತ್ತು"]},"te":{"select":"భాషను ఎంచుకోండి","title":"1 నుండి 10 వరకు లెక్కిద్దాం!","instruction":"సంఖ్యను నొక్కి వినండి.","hear":"వినండి","try":"మళ్లీ ప్రయత్నించండి","great":"చాలా బాగుంది!","wrong":"మళ్లీ ప్రయత్నించండి!","numbers":["ఒకటి","రెండు","మూడు","నాలుగు","ఐదు","ఆరు","ఏడు","ఎనిమిది","తొమ్మిది","పది"]},"ta":{"select":"மொழியைத் தேர்ந்தெடுக்கவும்","title":"1 முதல் 10 வரை எண்ணலாம்!","instruction":"எண்ணைத் தட்டி கேளுங்கள்.","hear":"கேளுங்கள்","try":"மீண்டும் முயற்சி செய்யுங்கள்","great":"மிகவும் நன்று!","wrong":"மீண்டும் முயற்சி செய்யுங்கள்!","numbers":["ஒன்று","இரண்டு","மூன்று","நான்கு","ஐந்து","ஆறு","ஏழு","எட்டு","ஒன்பது","பத்து"]},"ml":{"select":"ഭാഷ തിരഞ്ഞെടുക്കുക","title":"1 മുതൽ 10 വരെ എണ്ണാം!","instruction":"നമ്പറിൽ ടാപ്പ് ചെയ്ത് കേൾക്കൂ.","hear":"കേൾക്കൂ","try":"വീണ്ടും ശ്രമിക്കൂ","great":"വളരെ നന്നായി!","wrong":"വീണ്ടും ശ്രമിക്കൂ!","numbers":["ഒന്ന്","രണ്ട്","മൂന്ന്","നാല്","അഞ്ച്","ആറ്","ഏഴ്","എട്ട്","ഒമ്പത്","പത്ത്"]},"bn":{"select":"ভাষা নির্বাচন করুন","title":"চলো ১ থেকে ১০ পর্যন্ত গুনি!","instruction":"সংখ্যায় ট্যাপ করুন এবং শুনুন।","hear":"শুনুন","try":"আবার চেষ্টা করুন","great":"খুব ভালো!","wrong":"আবার চেষ্টা করুন!","numbers":["এক","দুই","তিন","চার","পাঁচ","ছয়","সাত","আট","নয়","দশ"]},"or":{"select":"ଭାଷା ବାଛନ୍ତୁ","title":"ଆସନ୍ତୁ ୧ ରୁ ୧୦ ପର୍ଯ୍ୟନ୍ତ ଗଣିବା!","instruction":"ସଂଖ୍ୟାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ ଏବଂ ଶୁଣନ୍ତୁ।","hear":"ଶୁଣନ୍ତୁ","try":"ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ","great":"ବହୁତ ଭଲ!","wrong":"ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ!","numbers":["ଏକ","ଦୁଇ","ତିନି","ଚାରି","ପାଞ୍ଚ","ଛଅ","ସାତ","ଆଠ","ନଅ","ଦଶ"]},"ar":{"select":"اختر اللغة","title":"هيا نعد من 1 إلى 10!","instruction":"اضغط على الرقم واستمع.","hear":"استمع","try":"حاول مرة أخرى","great":"أحسنت!","wrong":"حاول مرة أخرى!","numbers":["واحد","اثنان","ثلاثة","أربعة","خمسة","ستة","سبعة","ثمانية","تسعة","عشرة"]},"tr":{"select":"Dil seçin","title":"1'den 10'a kadar sayalım!","instruction":"Bir sayıya dokunun ve dinleyin.","hear":"Dinle","try":"Tekrar dene","great":"Harika!","wrong":"Tekrar dene!","numbers":["bir","iki","üç","dört","beş","altı","yedi","sekiz","dokuz","on"]},"ur":{"select":"زبان منتخب کریں","title":"آئیے 1 سے 10 تک گنتی کریں!","instruction":"نمبر پر ٹیپ کریں اور سنیں۔","hear":"سنیں","try":"دوبارہ کوشش کریں","great":"بہت خوب!","wrong":"دوبارہ کوشش کریں!","numbers":["ایک","دو","تین","چار","پانچ","چھ","سات","آٹھ","نو","دس"]},"fa":{"select":"زبان را انتخاب کنید","title":"بیایید از ۱ تا ۱۰ بشماریم!","instruction":"روی عدد بزنید و گوش کنید.","hear":"گوش کن","try":"دوباره تلاش کن","great":"عالی بود!","wrong":"دوباره تلاش کن!","numbers":["یک","دو","سه","چهار","پنج","شش","هفت","هشت","نه","ده"]},"pa-Arab":{"select":"زبان چنو","title":"آؤ 1 توں 10 تک گنیے!","instruction":"نمبر تے ٹیپ کرو تے سنو۔","hear":"سنو","try":"دوبارہ کوشش کرو","great":"بہت ودھیا!","wrong":"دوبارہ کوشش کرو!","numbers":["اک","دو","تِن","چار","پنج","چھے","ست","اٹھ","نو","دس"]},"en":{"select":"Select language","title":"Let's Count 1 to 10!","instruction":"Tap a number and listen.","hear":"Hear It","try":"Try Again","great":"Great job!","wrong":"Try again!","numbers":["one","two","three","four","five","six","seven","eight","nine","ten"]}}}
+</script>
+<script src="js/counting-one-to-ten.js"></script>
+</body>
+</html>
