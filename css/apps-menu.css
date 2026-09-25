@@ -1,5 +1,5 @@
 /* =========================================================
-   AURA RHYMES — APPS MENU
+   AURA RHYMES — APPS / GAMES MENU
    ========================================================= */
 
 .apps-menu {
@@ -56,7 +56,7 @@
 
 
 /* =========================================================
-   APPS PANEL
+   APPS / GAMES PANEL
    ========================================================= */
 
 .apps-menu-panel {
@@ -85,12 +85,12 @@
     0 12px 30px rgba(0, 0, 0, 0.12),
     0 3px 10px rgba(0, 0, 0, 0.06);
 
-  z-index: 1000;
+  z-index: 10000;
 }
 
 
 /* =========================================================
-   APP LINKS
+   APP / GAME LINKS
    ========================================================= */
 
 .apps-menu-panel > a {
@@ -138,38 +138,75 @@
 
 @media (max-width: 768px) {
 
+  /*
+   * IMPORTANT:
+   * Games occupies only its normal navigation width.
+   * It must never become a full-width navigation item.
+   */
+
   .apps-menu {
 
-    width: 100%;
+    width: auto;
+
+    flex: 0 0 auto;
+
+    position: relative;
   }
+
 
   .apps-menu > summary {
 
-    width: 100%;
+    width: auto;
 
-    justify-content: space-between;
+    justify-content: center;
+
+    white-space: nowrap;
   }
+
+
+  /* -------------------------------------------------------
+     Games dropdown
+     ------------------------------------------------------- */
 
   .apps-menu-panel {
 
-    position: static;
+    /*
+     * CRITICAL FIX:
+     * Absolute positioning removes the dropdown
+     * from normal document flow.
+     *
+     * Therefore Lab, Aura and Store do not move.
+     */
 
-    transform: none;
+    position: absolute;
 
-    width: 100%;
+    top: calc(100% + 8px);
 
-    margin-top: 6px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 190px;
+
+    margin-top: 0;
 
     box-sizing: border-box;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     padding: 7px;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: #ffffff;
 
-    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 3px 10px rgba(0, 0, 0, 0.06);
+
+    z-index: 10000;
   }
+
 
   .apps-menu-panel > a {
 
@@ -191,6 +228,7 @@
 
     padding: 6px;
   }
+
 
   .apps-menu-panel > a {
 
