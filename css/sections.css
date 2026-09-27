@@ -74,3 +74,70 @@ footer {
   cursor: pointer;
   z-index: 9999;
 }
+
+/* =========================================================
+   ABOUT / WHO WE ARE
+   ========================================================= */
+
+#about {
+  position: relative;
+}
+
+.about-intro {
+  padding: 34px 24px;
+  margin: 0 auto 20px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 224, 102, 0.35), transparent 34%),
+    linear-gradient(135deg, #fffaf0, #fff5f3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.about-intro-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #fff;
+  color: #ff6f61;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.about-kicker {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.about-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.about-pill {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 480px) {
+  .about-intro {
+    padding: 26px 16px;
+    border-radius: 22px;
+  }
+
+  .about-pill {
+    width: 100%;
+  }
+
+  .about-kicker {
+    font-size: 0.95rem;
+  }
+}
