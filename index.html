@@ -172,7 +172,10 @@
     -->
 
     <!-- ================= OUR STORY ================= -->
+    <a href="#home">Home</a>
+    <a href="#videos">Videos</a>
     <a href="#about-aura">Aura</a>
+    <a href="#schools">Schools</a>
     <a href="store.html"
                target="_blank"
                rel="noopener noreferrer">
@@ -185,7 +188,7 @@
 
 
 <!-- ================= BANNER / HERO ================= -->
-<section class="hero-banner">
+<section class="hero-banner" id="home">
 
   <div class="hero-bg"></div>
 
@@ -638,7 +641,7 @@
   <div class="about-aura-grid">
     <div class="about-aura-copy">
       <h2>About Aura Rhymes</h2>
-      <h2>Who We Are</h2>
+      <h3 class="section-kicker">Who We Are</h3>
       <p class="desc" style="text-align:left;margin:0;">
         Aura Rhymes is a children's educational platform created to make learning joyful through rhymes, songs, stories, games and interactive experiences.
         We believe every child deserves a bright start, and we are here to support children, families and schools with safe, age-appropriate and engaging content.
@@ -669,11 +672,26 @@
       <h2>Parent &amp; Teacher Corner</h2>
       <p class="desc" style="text-align:left;margin:0;">Helpful answers for joyful early learning.</p>
       <div class="faq-list">
-        <div class="faq-item">What age group is Aura Rhymes suitable for?</div>
-        <div class="faq-item">How can teachers use Aura Rhymes?</div>
-        <div class="faq-item">What learning skills do the games support?</div>
-        <div class="faq-item">Can children explore content in different languages?</div>
-        <div class="faq-item">How can schools collaborate with Aura Rhymes?</div>
+        <details class="faq-item">
+          <summary>What age group is Aura Rhymes suitable for?</summary>
+          <p>Aura Rhymes is designed primarily for toddlers and preschool-age children, with activities and content that can also be enjoyed by young school-age children.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can teachers use Aura Rhymes?</summary>
+          <p>Teachers can use selected rhymes, songs, videos and interactive activities as playful supplements to classroom learning.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What learning skills do the games support?</summary>
+          <p>Our activities can introduce early concepts such as letters, numbers, colours, shapes, matching, memory, animals and space.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can children explore content in different languages?</summary>
+          <p>Yes. Aura Rhymes is building multilingual content so children can learn through familiar languages as well as discover new sounds and words.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How can schools collaborate with Aura Rhymes?</summary>
+          <p>Schools can contact us to discuss educational content, digital learning resources and potential collaboration opportunities.</p>
+        </details>
       </div>
     </article>
 
@@ -681,8 +699,9 @@
       <h2>Latest from Aura's Learning Journal</h2>
       <p>Ideas, inspiration and playful learning for little minds.</p>
       <div class="journal-card">
-        <div class="journal-art">🔤 🧒 📚</div>
+        <div class="journal-art" aria-hidden="true">🔤 🧒 📚</div>
         <div class="journal-copy">
+          <span class="journal-tag">PARENT &amp; TEACHER IDEA</span>
           <h3>5 Fun Ways to Teach ABCs Through Play</h3>
           <p>Simple activities that can make alphabet learning more engaging for preschoolers.</p>
           <a class="aura-hero-btn primary" href="#about">Explore Aura's Learning Ideas →</a>
@@ -1034,7 +1053,7 @@
 <section class="cta-section">
 
   <h2>
-    🌟 Join Thousands of Kids!
+    🌟 Join the Aura Learning Journey
   </h2>
 
 
